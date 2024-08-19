@@ -1,0 +1,10 @@
+#!/bin/bash
+
+status=`systemctl is-active named`
+echo $status
+case $status in
+	active) exit 0;; #ok
+	inactive) exit 1;; #warning
+	failed) exit 2;; #critical
+	*) exit 3;; #unknown	
+esac

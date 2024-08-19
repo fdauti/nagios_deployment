@@ -1,0 +1,25 @@
+Create Nagios VM
+
+Use: NRPE, notifications, escalations, time periods, event handlers
+
+- (Nagios remote plugin executor) - execute plugins available on the remote machine
+- service groups, and host groups (check_ping)
+
+Nagios (i.e. the nagios.cfg, all other cfg files it refers to)
+
+- a2.cfg and nagios.cfg on server
+
+plugins examples
+
+- check_dns
+- restart_dns
+
+nrpe.cfg included on the other machines, 
+
+Changes made to service configuration 
+
+- my-zone.txt , rev-zone.txt
+
+Firewall information 
+
+- firewall-cmd --list-all --zone=public

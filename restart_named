@@ -1,0 +1,25 @@
+#!/bin/sh
+
+case "$1" in
+OK)
+	;;
+UNKNOWN)
+	;;
+CRITICAL|WARNING)
+	case "$2" in
+	SOFT)
+		case "$3" in
+		3)
+			echo "Restarting DNS service"
+			systemctl restart named
+			;;
+		esac
+		;;
+	HARD)
+		echo "Restarting DNS service"
+		systemctl restart named
+		;;
+	esac
+	;;
+esac
+exit 0
